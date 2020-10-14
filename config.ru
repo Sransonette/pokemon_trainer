@@ -6,6 +6,5 @@ end
 
 use Rack::MethodOverride  
 run ApplicationController
-use BeltsController
 use PokemonController
 use TrainersController

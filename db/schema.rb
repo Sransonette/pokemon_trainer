@@ -13,18 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20201014003454) do
 
-  create_table "belts", force: :cascade do |t|
-    t.string   "name"
-    t.string   "slots"
-    t.string   "trainer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "pokemon", force: :cascade do |t|
     t.string   "name"
     t.string   "type"
-    t.string   "belt_id"
+    t.integer  "trainer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
