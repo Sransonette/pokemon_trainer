@@ -44,7 +44,7 @@ class TrainersController < ApplicationController
     if logged_in?
       session.clear
     end
-    redirect to "/login"
+    redirect to "/"
   end
 
   get '/show' do 

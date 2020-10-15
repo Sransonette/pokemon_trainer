@@ -1,4 +1,4 @@
-class PokemonController < ApplicationController
+class PokemonsController < ApplicationController
 
   
   get "/pokemon" do
