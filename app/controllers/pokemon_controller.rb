@@ -21,7 +21,7 @@ class PokemonsController < ApplicationController
 
   post '/pokemon' do 
     if !params[:name].blank?
-      @pokemon = Pokemon.new(name: params[:name])
+      @pokemon = Pokemon.new(name: params[:name], pokemon_type: params[:type])
       @pokemon.trainer = current_user
       @pokemon.save
       redirect to "/pokemon/#{@pokemon.id}"
@@ -53,7 +53,7 @@ class PokemonsController < ApplicationController
     if logged_in?
       Pokemon.find(params[:id]).tap do |pokemon|
         pokemon.update(name: params[:name]) if current_user == pokemon.trainer 
-        redirect "/pokemon/#{pokemon.id}/edit"
+        redirect "/pokemon/#{pokemon.id}"
       end
     else
       redirect '/login'

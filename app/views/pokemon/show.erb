@@ -1,6 +1,6 @@
 <h1>Here is your current Pokemon team!</h1>
 
-<label>Name</label>     <%=@pokemon.name%><br> <label>Type</label><%=@pokemon.type%>
+<label>Name</label>     <%=@pokemon.name%><br> <label>Type   </label><%=@pokemon.pokemon_type%>
 
 <form method="post" action="/pokemon/<%=@pokemon.id%>">
 <input type="hidden" id="hidden" name="_method" value="delete">

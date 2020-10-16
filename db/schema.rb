@@ -15,10 +15,10 @@ ActiveRecord::Schema.define(version: 20201014003454) do
 
   create_table "pokemons", force: :cascade do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "pokemon_type"
     t.integer  "trainer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "trainers", force: :cascade do |t|
