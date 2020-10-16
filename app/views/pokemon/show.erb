@@ -1,2 +1,23 @@
-<h1>This is the show page for an individual instance of your model.</h1>
-<h3>Hello</h3>
+<h1>Here is your current Pokemon team!</h1>
+
+<label>Name</label>     <%=@pokemon.name%><br> <label>Type</label><%=@pokemon.type%>
+
+<form method="post" action="/pokemon/<%=@pokemon.id%>">
+<input type="hidden" id="hidden" name="_method" value="delete">
+<input type="submit" value="Delete Pokemon">
+</form>
+
+<form  method="post" action="/show">
+    <input type="submit" id="submit" value="Back">
+
+</form>
+
+<form  method="get" action="/pokemon/<%=@pokemon.id%>/edit">
+    <input type="submit" value="Edit">
+
+</form>
+
+
+
+
+

@@ -52,33 +52,4 @@ class TrainersController < ApplicationController
     erb :'/trainers/show'
   end
 
-#   # GET: /trainers/create_t
-#   get "/trainers/create_t" do
-#     erb :"/trainers/create_t"
-#   end
-
-#   # POST: /trainers
-#   post "/trainers" do
-#     redirect "/trainers"
-#   end
-
-#   # GET: /trainers/5
-#   get "/trainers/:id" do
-#     erb :"/trainers/show"
-#   end
-
-#   # GET: /trainers/5/edit
-#   get "/trainers/:id/edit" do
-#     erb :"/trainers/edit"
-#   end
-
-#   # PATCH: /trainers/5
-#   patch "/trainers/:id" do
-#     redirect "/trainers/:id"
-#   end
-
-#   # DELETE: /trainers/5/delete
-#   delete "/trainers/:id/delete" do
-#     redirect "/trainers"
-#   end
 end
