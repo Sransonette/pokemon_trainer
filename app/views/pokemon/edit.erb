@@ -2,16 +2,10 @@
 <input id="hidden" type="hidden" name="_method" value="patch">
 Name: 
 <input type="text" name="name" value="<%= @pokemon.name%>">
-<input type="submit" value="submit">
-</form>
-
-<form method="post" action="/pokemon/<%= @pokemon.id%>">
-<input id="hidden" type="hidden" name="_method" value="patch">
 Type: 
 <input type="text" name="name" value="<%= @pokemon.pokemon_type%>">
 <input type="submit" value="submit">
 </form>
-
 
 <form method="get" action="/pokemon/<%=@pokemon.id%>">
 <input style="width:75px" type="submit" value="Cancel">

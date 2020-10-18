@@ -22,8 +22,7 @@ class TrainersController < ApplicationController
 
   get '/login' do 
     if logged_in?
-      current_user
-      redirect to "/show"
+      redirect to "/trainer/#{current_user.id}"
     else
       erb :'/trainers/login'
     end
@@ -34,7 +33,7 @@ class TrainersController < ApplicationController
 
     if @trainer && @trainer.authenticate(params[:password])
       session[:id] = @trainer.id 
-      redirect to "/show"
+      redirect to "/trainer/#{@trainer.id}"
     else
       redirect to "/login"
     end
@@ -47,9 +46,13 @@ class TrainersController < ApplicationController
     redirect to "/"
   end
 
-  get '/show' do 
-    @trainer = current_user
+  get '/trainer/:id' do 
+    @trainer = Trainer.find(params[:id])
     erb :'/trainers/show'
   end
+
+  
+
+
 
 end

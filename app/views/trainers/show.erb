@@ -1,4 +1,10 @@
 <h1>Welcome, <%=@trainer.username%></h1>
+<h2>Here are your current Pokemon</h2>
+<%@trainer.pokemon.each do |pokemon|%>
+    Name:<%=pokemon.name%><br>
+    Type:<%=pokemon.pokemon_type%>    <a href="/pokemon/<%=pokemon.id%>/edit">Edit</a><br><br>
+    
+<%end%><br>
 
-<a href="/pokemon/new">Choose your Pokemon</a><br>
+<a href="/pokemon/new">Choose your new Pokemon</a><br>
 <a href="/logout">Log out</a>
