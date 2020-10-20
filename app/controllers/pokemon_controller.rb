@@ -64,7 +64,7 @@ class PokemonsController < ApplicationController
     @pokemon = Pokemon.find(params[:id])
       if logged_in? && @pokemon.trainer == current_user 
         @pokemon.destroy
-          redirect to "/trainer/#{current_user.id}"
+          redirect to "/trainers/#{current_user.id}"
       else 
         redirect to '/login'
       end

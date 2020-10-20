@@ -2,7 +2,7 @@ class TrainersController < ApplicationController
 
   get '/signup' do
     if logged_in?
-      redirect to "/show"
+      redirect to "/trainers/#{current_user.id}"
     else 
       erb :"/trainers/create_t"
     end
@@ -14,7 +14,7 @@ class TrainersController < ApplicationController
       redirect to "/signup"
     elsif @trainer.save
       session[:id] = @trainer.id
-      redirect to "/show"
+      redirect to "/trainers/#{@trainer.id}"
     else
       redirect to "/signup"
     end
@@ -22,7 +22,7 @@ class TrainersController < ApplicationController
 
   get '/login' do 
     if logged_in?
-      redirect to "/trainer/#{current_user.id}"
+      redirect to "/trainers/#{current_user.id}"
     else
       erb :'/trainers/login'
     end
@@ -33,7 +33,7 @@ class TrainersController < ApplicationController
 
     if @trainer && @trainer.authenticate(params[:password])
       session[:id] = @trainer.id 
-      redirect to "/trainer/#{@trainer.id}"
+      redirect to "/trainers/#{@trainer.id}"
     else
       redirect to "/login"
     end
@@ -46,7 +46,7 @@ class TrainersController < ApplicationController
     redirect to "/"
   end
 
-  get '/trainer/:id' do 
+  get '/trainers/:id' do 
     @trainer = Trainer.find(params[:id])
     erb :'/trainers/show'
   end

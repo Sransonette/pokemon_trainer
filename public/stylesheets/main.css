@@ -13,7 +13,7 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
+    background-color: rgb(53, 3, 99);
     color: #333;
     font-family: Sans-Serif;
     line-height: 18px;
@@ -112,4 +112,17 @@
     font-size: 18px;
     line-height: 24px;
   }
+}
+div.ash { 
+  float:right;
+  justify-content: right;
+  align-items: flex-end;
+  text-align: right;
+
+}
+
+div.signup {
+  align-items: center;
+  text-align: center;
+
 }

@@ -1,4 +1,13 @@
 <h1>Here is your newly created Pokemon</h1>
+<html>
+   <head>
+      <title>HTML img Tag</title>
+   </head>
+
+   <body>
+      <img src="https://img.pokemondb.net/artwork/<%= @pokemon.name.downcase %>.jpg"><br>
+   </body>
+</html>
 
 <label>Name</label> <%=@pokemon.name%><br> <label>Type   </label><%=@pokemon.pokemon_type%>
 
@@ -7,7 +16,7 @@
 <input type="submit" value="Delete Pokemon">
 </form>
 
-<form  method="get" action="/trainer/<%=current_user.id%>">
+<form  method="get" action="/trainers/<%=current_user.id%>">
     <input type="submit" id="submit" value="Back">
 
 </form>
