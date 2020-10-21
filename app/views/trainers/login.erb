@@ -1,3 +1,7 @@
+<% if flash[:errors] %>
+<h3 style="color:red;"><%= flash[:errors] %>
+<% end %>
+
 <h1>Log into your Pokemon App</h1>
 
 <form action="/login" method="POST">

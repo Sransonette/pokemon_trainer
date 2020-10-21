@@ -11,11 +11,13 @@ class TrainersController < ApplicationController
   post '/signup' do 
     @trainer = Trainer.new(params)
     if @trainer.username == "" || @trainer.email == "" || @trainer.password == ""
+      flash[:errors] = "All forms must be filled to create a Pokemon Trainer. Please try again."
       redirect to "/signup"
     elsif @trainer.save
       session[:id] = @trainer.id
       redirect to "/trainers/#{@trainer.id}"
     else
+      flash[:errors] = "All forms must be filled to create a Pokemon trainer. Please try again."
       redirect to "/signup"
     end
   end
@@ -35,6 +37,8 @@ class TrainersController < ApplicationController
       session[:id] = @trainer.id 
       redirect to "/trainers/#{@trainer.id}"
     else
+
+      flash[:errors] = "Invalid Username or Password. Please try again."
       redirect to "/login"
     end
   end
