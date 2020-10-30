@@ -14,9 +14,9 @@
 
 <%@trainer.pokemon.each do |pokemon|%>
     Name:<%=pokemon.name%><br>
-    Type:<%=pokemon.pokemon_type%>    <a href="/pokemon/<%=pokemon.id%>/edit">Edit</a><br><br>
-    
+    Type:<%=pokemon.pokemon_type%>    <%if current_user == pokemon.trainer%><a href="/pokemon/<%=pokemon.id%>/edit">Edit</a><br><br><br><br>
+    <a href="/pokemon/new">Create a new Pokemon</a>
 <%end%><br>
+<%end%>
 
-<a href="/pokemon/new">Create a new Pokemon</a><br>
 <a href="/logout">Log out</a>

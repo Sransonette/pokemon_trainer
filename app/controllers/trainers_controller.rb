@@ -1,6 +1,6 @@
 class TrainersController < ApplicationController
 
-  #signup route
+  
   get '/signup' do
     if logged_in?
       redirect to "/trainers/#{current_user.id}"
@@ -9,7 +9,7 @@ class TrainersController < ApplicationController
     end
   end
 
-  #post route requiring that all forms be filled to create a new user
+  
   post '/signup' do 
     @trainer = Trainer.new(params)
     if @trainer.username == "" || @trainer.email == "" || @trainer.password == ""
@@ -24,7 +24,7 @@ class TrainersController < ApplicationController
     end
   end
 
-  #get route to login
+  
   get '/login' do 
     if logged_in?
       redirect to "/trainers/#{current_user.id}"
@@ -33,7 +33,7 @@ class TrainersController < ApplicationController
     end
   end
 
-  #post is authenticating that the user name and password match using .authenticate
+  
   post '/login' do 
     @trainer = Trainer.find_by(:username => params[:username])
 
@@ -47,7 +47,7 @@ class TrainersController < ApplicationController
     end
   end
 
-  #logout route clearing user session
+  
   get '/logout' do 
     if logged_in?
       session.clear
@@ -55,14 +55,11 @@ class TrainersController < ApplicationController
     redirect to "/"
   end
 
-  #get route to the show page
+  
   get '/trainers/:id' do 
     @trainer = Trainer.find(params[:id])
     erb :'/trainers/show'
   end
-
-  
-
 
 
 end

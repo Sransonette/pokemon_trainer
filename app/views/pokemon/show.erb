@@ -11,7 +11,7 @@
 </html>
 
 <label>Name</label> <%=@pokemon.name%><br> <label>Type   </label><%=@pokemon.pokemon_type%>
-
+<%if current_user == @pokemon.trainer%>
 <form method="post" action="/pokemon/<%=@pokemon.id%>">
 <input type="hidden" id="hidden" name="_method" value="delete">
 <input type="submit" value="Delete Pokemon">
@@ -26,7 +26,7 @@
     <input type="submit" value="Edit">
 
 </form>
-
+<%end%>
 
 
 

@@ -9,7 +9,7 @@
       <img src="https://img.pokemondb.net/artwork/<%= @pokemon.name.downcase %>.jpg"><br>
    </body>
 </html>
-
+<%if current_user == @pokemon.trainer%>
 <form method="post" action="/pokemon/<%= @pokemon.id%>">
 <input id="hidden" type="hidden" name="_method" value="patch">
 Name: 
@@ -26,4 +26,5 @@ Type:
 <input type="hidden" id="hidden" name="_method" value="delete">
 <input type="submit" value="Delete Pokemon">
 </form>
+<%end%>
 

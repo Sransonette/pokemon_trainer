@@ -8,7 +8,7 @@
       <img src="https://assets.pokemon.com/assets/cms2/img/misc/_tiles/spotlight/professor-oak/pcom-spotlight-prof-oak-169.jpg">
    </body>
 </html>
-
+<%if current_user == @pokemon.trainer%>
 <form action='/pokemon' method="post">
     Pokemon Name<br>
     <input type="text" name="name"><br>
@@ -22,5 +22,5 @@
     <input type="submit" id="submit" value="Back">
 
 </form>
-
+<%end%>
 
