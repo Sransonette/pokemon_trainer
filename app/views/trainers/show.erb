@@ -1,4 +1,6 @@
-
+<% if flash[:errors] %>
+<h3 style="color:red;"><%= flash[:errors] %>
+<% end %>
 <h1>Welcome, <%=@trainer.username%></h1>
 <h2>Here are your current Pokemon</h2>
 
@@ -14,9 +16,10 @@
 
 <%@trainer.pokemon.each do |pokemon|%>
     Name:<%=pokemon.name%><br>
-    Type:<%=pokemon.pokemon_type%>    <%if current_user == pokemon.trainer%><a href="/pokemon/<%=pokemon.id%>/edit">Edit</a><br><br><br><br>
-    <a href="/pokemon/new">Create a new Pokemon</a>
-<%end%><br>
-<%end%>
+    Type:<%=pokemon.pokemon_type%><a href="/pokemon/<%=pokemon.id%>/edit">Edit</a><br><br>
+    
 
+<%end%><br><br>
+
+<a href="/pokemon/new">Create a new Pokemon</a><br>
 <a href="/logout">Log out</a>

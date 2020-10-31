@@ -25,13 +25,13 @@ class TrainersController < ApplicationController
   end
 
   
-  get '/login' do 
-    if logged_in?
-      redirect to "/trainers/#{current_user.id}"
-    else
-      erb :'/trainers/login'
+    get '/login' do 
+      if logged_in?
+        redirect to "/trainers/#{current_user.id}"
+      else
+        erb :'/trainers/login'
+      end
     end
-  end
 
   
   post '/login' do 
@@ -58,7 +58,12 @@ class TrainersController < ApplicationController
   
   get '/trainers/:id' do 
     @trainer = Trainer.find(params[:id])
-    erb :'/trainers/show'
+    if @trainer == current_user
+      erb :'/trainers/show'
+    else
+      flash[:errors] = "You are not authoroized to view this page"
+      redirect to "/login"
+    end
   end
 
 
