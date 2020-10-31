@@ -25,13 +25,13 @@ class TrainersController < ApplicationController
   end
 
   
-    get '/login' do 
-      if logged_in?
-        redirect to "/trainers/#{current_user.id}"
-      else
-        erb :'/trainers/login'
-      end
+  get '/login' do 
+    if logged_in?
+      redirect to "/trainers/#{current_user.id}"
+    else
+       erb :'/trainers/login'
     end
+  end
 
   
   post '/login' do 

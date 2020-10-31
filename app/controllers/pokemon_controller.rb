@@ -56,7 +56,7 @@ class PokemonsController < ApplicationController
   patch '/pokemon/:id' do 
     if logged_in?
       Pokemon.find(params[:id]).tap do |pokemon|
-        pokemon.update(name: params[:name], pokemon_type: params[:type]) if current_user == pokemon.trainer 
+        pokemon.update(name: params[:name], pokemon_type: params[:type]) if current_user == pokemon.trainer
         redirect "/pokemon/#{pokemon.id}"
       end
     else
