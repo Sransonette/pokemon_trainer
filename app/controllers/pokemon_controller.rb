@@ -22,7 +22,7 @@ class PokemonsController < ApplicationController
 
   
   post '/pokemon' do 
-    if !params[:name].blank?
+    if !params[:name].blank? && !params[:type].blank?
       @pokemon = Pokemon.new(name: params[:name], pokemon_type: params[:type])
       @pokemon.trainer = current_user
       @pokemon.save
@@ -78,5 +78,3 @@ class PokemonsController < ApplicationController
 
 
 end
-
-

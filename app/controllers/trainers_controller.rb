@@ -61,7 +61,7 @@ class TrainersController < ApplicationController
     if @trainer == current_user
       erb :'/trainers/show'
     else
-      flash[:errors] = "You are not authoroized to view this page"
+      flash[:errors] = "You are not authorized to view that page"
       redirect to "/login"
     end
   end
