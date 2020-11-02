@@ -30,6 +30,12 @@ class ApplicationController < Sinatra::Base
       current_user ? true : false
     end
 
+    def trainers_pokemon(pokemon)
+      current_user == pokemon.trainer
+     
+    end
+
+
     
   end
 
